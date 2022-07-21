@@ -1,0 +1,43 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@model OfficeReservationCalculator.ViewModels.HomeViewModel
+
+
+<div class="jumbotron">
+    <label for="wantedMonth">Choose a month:</label>
+    <input name="wantedMonth" id="wantedMonth" class="date-picker" />
+
+    <p id="log"></p>
+</div>
+
+<div class="row">
+    <div class="col-md-10" id="rShowResults" style="display:none;">
+        <h2 id="hMonth">2000-01:</h2>
+        <p>
+            expected revenue: <b id="month_revenue">???</b>, expected total capacity of the unreserved offices: <b id="unreserved_offices">???</b> 
+        </p>
+
+        @*<input list="Offices_List" name="tblOfficesPrice" id="tblOfficesPrice" />
+        <datalist id="tblOfficesPrice">
+            @{
+                foreach (var office in Model.Offices)
+                {
+                    <option value="@office.iMonthlyPrice">@office.iMonthlyPrice</option>
+                }
+            }
+        </datalist>*@
+
+    </div>
+
+
+</div>
+
+@section scripts{
+    <script src="../../Scripts/ORC/Index.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+}
+
+
