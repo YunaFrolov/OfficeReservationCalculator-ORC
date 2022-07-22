@@ -20,6 +20,7 @@ namespace OfficeReservationCalculator.Models
             officeData.sCapacity = Convert.ToInt32(values[0]);
             officeData.iMonthlyPrice = Convert.ToInt32(values[1]);
             officeData.dtStartDay = Convert.ToDateTime(values[2]);
+            /* handle null values - reserved indefinitely, thus max date */
             officeData.dtEndDay = values[3] == "" ? new DateTime(9999, 12, 31) : Convert.ToDateTime(values[3]);
 
             return officeData;

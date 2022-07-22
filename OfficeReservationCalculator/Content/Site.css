@@ -1,45 +1,147 @@
-﻿body {
+﻿/***    BODY      */
+body {
     padding-top: 100px;
     padding-bottom: 20px;
+    background-image: linear-gradient(#222222, #1f2b41);
+}
+body, html {
+    height: 100%;
+    font-family: MarckScript;
 }
 
+
+.bg {
+    background-image: url("../Extras/background_image.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
-    /*background-image: url("../Extras/background_image.jpg");*/
-    background-repeat: no-repeat;
-    /*background-size: contain;*/
-    background-size: 100% 100%;
+  
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
+
+/***    INPUTS      */
+
+/* For text like handwriting */
+@font-face {
+    font-family: MarckScript;
+    src: url('../Extras/MarckScript-Regular.ttf');
+}
+/* For title like orc */
+@font-face {
+    font-family: OrcHorde;
+    src: url('../Extras/OrcHordeBB_Reg.ttf');
+}
+
+.handwriting {
+    font-size: 40px;
+    margin: auto 50px;
+}
+
 .dl-horizontal dt {
     white-space: normal;
 }
 
-input,
-select,
-textarea {
-    max-width: 280px;
+
+
+/***    NAVIGATION BAR      */
+.navbar {
+    border-color: #222222
 }
 
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-    background-color: #777;
-    border-color: #fff
+
+
+/* Styling the navbar title - placement and link effect */
+.navbar-brand-name {
+    padding: 15px 15px;
+    font-size: 50px;
+    line-height: 100px;
+    color: #399238;
+    font-family: OrcHorde;
 }
+
+a {
+    background-image: linear-gradient( to right, #eff3ef, #cccccc 50%, #399238 50% );
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+    a:before {
+        content: '';
+        background: #eff3ef;
+        display: block;
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    a:hover {
+        background-position: 0;
+    }
+
+        a:hover::before {
+            width: 100%;
+        }
 
 
 /* Override the default bootstrap  */
+/* ORC icon */
+.navbar-brand {
+    float: left;
+    height: 130px;
+    width: 130px;
+    padding: 15px 15px;
+    line-height: 100px;
+}
 
-/*.col-md-10{
-    color: white;
-}*/
+/***    DATE PICKER    */
 
 /* Override datepicker to not display days of month */
 .ui-datepicker-calendar {
     display: none;
 }
+
+
+.place-date-picker {
+    margin-top: 20%;
+}
+
+
+
+
+.date-picker {
+    position: relative;
+    width: 100%;
+    max-width: 200px;
+    height: 60px;
+    background-color: #FFF;
+    margin: 30px auto;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    user-select: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+    font-size: 50px;
+}
+
+    .date-picker:hover {
+        background-color: #F3F3F3;
+    }
+

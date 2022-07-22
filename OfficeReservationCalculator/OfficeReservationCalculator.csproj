@@ -134,6 +134,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Extras\background_image.jpg" />
+    <Content Include="Extras\background_image_wider.jpg" />
     <Content Include="Extras\ORC_icon.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -142,6 +143,8 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Extras\rent_data.csv" />
+    <Content Include="Extras\MarckScript-Regular.ttf" />
+    <Content Include="Extras\OrcHordeBB_Reg.ttf" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />

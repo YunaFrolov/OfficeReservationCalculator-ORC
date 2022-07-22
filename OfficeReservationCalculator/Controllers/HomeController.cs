@@ -13,6 +13,7 @@ namespace OfficeReservationCalculator.Controllers
     {
         public ActionResult Index()
         {
+            /* Model in case we would need to display data from the csv file in a datalist or a table */
             var Model = new HomeViewModel();
             List<Office> getOffices_List = _getOfficeDataFromCSV();
             Model.Offices = getOffices_List;
@@ -20,6 +21,7 @@ namespace OfficeReservationCalculator.Controllers
             return View(Model);
         }
 
+        /* HELPER */ 
         private List<Office> _getOfficeDataFromCSV()
         {
             string fileName = "rent_data.csv";

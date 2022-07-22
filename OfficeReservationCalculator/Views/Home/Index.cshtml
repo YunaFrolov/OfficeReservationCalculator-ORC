@@ -4,34 +4,27 @@
 @model OfficeReservationCalculator.ViewModels.HomeViewModel
 
 
-<div class="jumbotron">
-    <label for="wantedMonth">Choose a month:</label>
-    <input name="wantedMonth" id="wantedMonth" class="date-picker" />
+<div class="container">
+    <div class="row place-date-picker">
+        @* left column - choose month *@
+        <div class="col-sm-6">
+            <label for="wantedMonth" class="handwriting">Choose a month:</label>
+            <br />
+            <input name="wantedMonth" id="wantedMonth" class="date-picker" autocomplete="off" />
+        </div>
 
-    <p id="log"></p>
-</div>
-
-<div class="row">
-    <div class="col-md-10" id="rShowResults" style="display:none;">
-        <h2 id="hMonth">2000-01:</h2>
-        <p>
-            expected revenue: <b id="month_revenue">???</b>, expected total capacity of the unreserved offices: <b id="unreserved_offices">???</b> 
-        </p>
-
-        @*<input list="Offices_List" name="tblOfficesPrice" id="tblOfficesPrice" />
-        <datalist id="tblOfficesPrice">
-            @{
-                foreach (var office in Model.Offices)
-                {
-                    <option value="@office.iMonthlyPrice">@office.iMonthlyPrice</option>
-                }
-            }
-        </datalist>*@
-
+        @* right column - hidden until month chosen. used to display calculations *@
+        <div class="col-sm-6" id="rShowResults" style="display: none;">
+            <p class="handwriting">
+                expected revenue: <b id="month_revenue">???</b>,
+                <br />
+                expected total capacity of the unreserved offices: <b id="unreserved_offices">???</b>
+            </p>
+        </div>
     </div>
-
-
 </div>
+
+
 
 @section scripts{
     <script src="../../Scripts/ORC/Index.js"></script>

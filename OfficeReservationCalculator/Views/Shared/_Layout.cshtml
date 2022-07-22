@@ -8,23 +8,25 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body >
+
+    @* Navigation bar - logo and title *@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
-
-                @Html.ActionLink("Office Reservation Calculator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                <img src="~/Extras/ORC_icon.png" height="100" width="100" />
+                <img src="~/Extras/ORC_icon.png" class="navbar-brand" />
+                @Html.ActionLink("Office Reservation Calculator", "Index", "Home", new { area = "" }, new { @class = "navbar-brand-name" })
             </div>
         </div>
     </div>
-    <div class="container body-content">
+
+    <div class="bg">
+
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Home Assignment ASP.NET App</p>
-        </footer>
+
     </div>
+
+
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
