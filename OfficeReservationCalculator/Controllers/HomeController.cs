@@ -49,8 +49,8 @@ namespace OfficeReservationCalculator.Controllers
                 {
                     office.dtStartDay = office.dtStartDay < dtStartOfMonth ? dtStartOfMonth : office.dtStartDay;
                     office.dtEndDay = office.dtEndDay > dtEndOfMonth ? dtEndOfMonth : office.dtEndDay;
-                    var DaysInMonthReserved = (office.dtEndDay - office.dtStartDay).TotalDays;
-                    office.iMonthlyPrice = (int)(office.iMonthlyPrice / (DateTime.DaysInMonth(iChosenYear, iChosenMonth) - DaysInMonthReserved));
+                    var DaysInMonthReserved = (office.dtEndDay - office.dtStartDay).TotalDays + 1;
+                    office.iMonthlyPrice = (int)(office.iMonthlyPrice / DateTime.DaysInMonth(iChosenYear, iChosenMonth) * DaysInMonthReserved);
                     lReservedThisMonth.Add(office);
                 }
             }
